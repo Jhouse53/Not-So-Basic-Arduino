@@ -104,3 +104,60 @@ void motorLeft() {
 }
 ### Reflection
 I had a really hard time on this but I eventually got it with lots of help. I did learn how to use a servo motor and a ultrasonic senser.
+
+---
+
+### NEWPING()
+
+### I made to LEDs blick depending on how close something is to a ultrasonic senser.
+
+### Code
+
+
+const int trigPin = 9;
+const int echoPin = 10;
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(12,OUTPUT);
+}
+
+void loop() {
+  Serial.print("Distance: ");
+  Serial.println(getDist());
+  delay(100);
+  if (getDist() < 20) {
+    digitalWrite(13, HIGH);
+  }
+  else {
+    digitalWrite(13,LOW);
+  }
+  if(getDist() > 20) {
+    digitalWrite(12,HIGH);
+  }
+  else {
+   digitalWrite(12, LOW);
+  }  
+}
+
+int getDist() {
+  long duration;
+  int distance;
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration * .0343) / 2;
+  return distance;
+
+}
+
+### Reflection
+This was pretty easy I just found something from the libary.
