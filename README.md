@@ -48,6 +48,7 @@ I learned how to make and LED blink using analogWrite
 Using an ultrasonic senser I moved a servor motor.
 
 ### Code
+C```
 /*
    HC-SR04 example sketch
   getDist function based from this,
@@ -102,6 +103,8 @@ void motorRight() {
 void motorLeft() {
   motor.write(150);
 }
+```
+
 ### Reflection
 I had a really hard time on this but I eventually got it with lots of help. I did learn how to use a servo motor and a ultrasonic senser.
 
