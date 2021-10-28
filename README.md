@@ -8,6 +8,7 @@ Arduino work folder
 I made and LED blink
 
 ### Code
+```python
 void setup() {
     pinMode(11, OUTPUT);
 }
@@ -35,11 +36,11 @@ void loop() {
     analogWrite(11,0);
     
     delay(500);
-    
+``` 
 }
 
 ### Reflection
-I learned how to make and LED blink using analogWrite 
+I learned how to make and LED blink using analogWrite. This was pretty simple and was just review.
 
 ---
 ## Hello Functions
@@ -48,7 +49,7 @@ I learned how to make and LED blink using analogWrite
 Using an ultrasonic senser I moved a servor motor.
 
 ### Code
-C```
+```python
 /*
    HC-SR04 example sketch
   getDist function based from this,
@@ -103,7 +104,8 @@ void motorRight() {
 void motorLeft() {
   motor.write(150);
 }
-```
+
+``` 
 
 ### Reflection
 I had a really hard time on this but I eventually got it with lots of help. I did learn how to use a servo motor and a ultrasonic senser.
@@ -115,7 +117,7 @@ I had a really hard time on this but I eventually got it with lots of help. I di
 ### I made to LEDs blick depending on how close something is to a ultrasonic senser.
 
 ### Code
-
+```python
 
 const int trigPin = 9;
 const int echoPin = 10;
@@ -159,7 +161,7 @@ int getDist() {
   duration = pulseIn(echoPin, HIGH);
   distance = (duration * .0343) / 2;
   return distance;
-
+```
 }
 
 ### Reflection
